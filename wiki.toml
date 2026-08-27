@@ -1,2 +1,8 @@
 name = "event-prism"
 description = "Event Prism product knowledge"
+wiki_root = "wiki"
+
+[types]
+
+[ingest]
+auto_commit = false

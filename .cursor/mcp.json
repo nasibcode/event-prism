@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "llm-wiki": {
+      "command": "/opt/homebrew/bin/llm-wiki",
+      "args": ["serve", "--watch"]
+    }
+  }
+}
