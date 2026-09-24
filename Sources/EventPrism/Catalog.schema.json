@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://event-prism.dev/catalog.schema.json",
+  "title": "EventPrism destination catalog",
+  "description": "One JSON file per destination. Dest id is the file's id field.",
+  "type": "object",
+  "required": ["schemaVersion", "id"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Must match AnalyticsDestination.id / register."
+    },
+    "events": {
+      "type": "object",
+      "additionalProperties": { "type": "boolean" },
+      "description": "Canonical event name → true if this dest may receive it."
+    },
+    "mappings": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/mapping" }
+    }
+  },
+  "$defs": {
+    "mapping": {
+      "type": "object",
+      "required": ["text"],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Vendor event name."
+        },
+        "keys": {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "description": "Canonical key → vendor key. Unmapped keys pass through."
+        },
+        "values": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/valueMap" },
+          "description": "Per canonical property: from-value → to-value. Reserved key default."
+        }
+      }
+    },
+    "valueMap": {
+      "type": "object",
+      "description": "From-value keys plus optional default. Values may be string, number, boolean, or null.",
+      "additionalProperties": {
+        "type": ["string", "number", "boolean", "null"]
+      }
+    }
+  }
+}
