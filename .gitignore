@@ -1,0 +1,16 @@
+.DS_Store
+/.build
+/Packages
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# Harness lives on this machine: ~/.cursor/harness/event-prism/
+# Keep these ignored if anything is ever written in the clone by mistake.
+/plans/
+/reports/
+/inbox/
+/raw/
