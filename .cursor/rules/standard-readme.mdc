@@ -1,0 +1,59 @@
+---
+description: README format — standard-readme style (iphone-duo-prep canonical)
+globs: "**/README.md"
+alwaysApply: false
+---
+
+# README format
+
+Canonical example: https://github.com/nasibcode/iphone-duo-prep/blob/main/README.md  
+Follow [standard-readme](https://github.com/RichardLitt/standard-readme). New or rewritten READMEs must match this shape.
+
+## Required skeleton
+
+```markdown
+# <Title>
+
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
+
+<1–3 sentence pitch. Bold the product name. Say what it is and what it is not.>
+
+## Table of Contents
+
+- [Background](#background)
+- [Install](#install)
+- [Usage](#usage)
+- [Features](#features)
+- [Repository map](#repository-map)   <!-- omit if tiny -->
+- [Docs](#docs)                       <!-- omit if none -->
+- [Contributing](#contributing)
+- [License](#license)
+
+## Background
+## Install
+## Usage
+## Features
+## Repository map
+## Docs
+## Contributing
+## License
+```
+
+Include domain sections only when real (e.g. Toolchain, Adapters). Drop empty sections — never leave stubs.
+
+## Voice and layout
+
+- Lead with a crisp pitch; separate “will do” from “will not do” (own section if non-obvious).
+- Prefer tables for comparisons, command→when-to-use, and docs indexes.
+- Show real commands and short code samples; abridge long output with `…`.
+- Link deeper docs (`SETUP.md`, `Docs/…`) instead of dumping everything in the README.
+- Package / CLI / product names in bold backticks once in the pitch.
+- License last: `[MIT](./LICENSE) © <year> <name>`.
+- Badge license must match the repo’s actual LICENSE file.
+
+## Do not
+
+- Marketing fluff, emoji walls, or “Built with ❤️”.
+- Giant feature lists with no Install/Usage path to a first win.
+- Profile/portfolio mini-READMEs (e.g. `username/username`) — those stay short; this rule is for product/library repos.
