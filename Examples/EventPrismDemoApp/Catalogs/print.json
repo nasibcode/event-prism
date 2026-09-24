@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "print",
+  "events": {
+    "debug_only": true
+  },
+  "mappings": {
+    "debug_only": {
+      "text": "debug",
+      "keys": {},
+      "values": {}
+    }
+  }
+}
