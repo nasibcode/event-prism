@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "braze",
+  "events": {
+    "screen_viewed": true,
+    "item_tapped": true,
+    "checkout_started": true,
+    "debug_only": false,
+    "promo_seen": true
+  },
+  "mappings": {
+    "screen_viewed": {
+      "text": "Screen Viewed",
+      "keys": {
+        "page_name": "page"
+      },
+      "values": {
+        "page_name": {
+          "home": "Home: ${page_title}",
+          "default": "Unknown screen"
+        }
+      }
+    },
+    "item_tapped": {
+      "text": "Item Tapped",
+      "keys": {},
+      "values": {}
+    },
+    "checkout_started": {
+      "text": "Checkout Started",
+      "keys": {},
+      "values": {}
+    },
+    "promo_seen": {
+      "text": "promo_impression",
+      "keys": {},
+      "values": {}
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "firebase",
+  "events": {
+    "screen_viewed": true,
+    "item_tapped": true,
+    "checkout_started": true,
+    "debug_only": false,
+    "promo_seen": false
+  },
+  "mappings": {
+    "screen_viewed": {
+      "text": "screen_view",
+      "keys": {
+        "page_name": "screen_name"
+      },
+      "values": {
+        "page_name": {
+          "home": "home page: ${page_title}",
+          "abc": "xyz",
+          "default": "other page"
+        }
+      }
+    },
+    "item_tapped": {
+      "text": "select_item",
+      "keys": {
+        "item_id": "item_id"
+      },
+      "values": {}
+    },
+    "checkout_started": {
+      "text": "begin_checkout",
+      "keys": {},
+      "values": {}
+    },
+    "promo_seen": {
+      "text": "ignored_unwhitelisted",
+      "keys": {},
+      "values": {}
+    }
+  }
+}
