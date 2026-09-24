@@ -1,0 +1,28 @@
+---
+description: Harness plans are machine-local; one item, one plan; mermaid required.
+alwaysApply: true
+---
+
+# Plan location and structure (EventPrism)
+
+Do not put harness files in this package. Use:
+
+`~/.cursor/harness/event-prism/plans/{item}.md`  
+`~/.cursor/harness/event-prism/reports/{item}.md`
+
+`{item}` is one work unit. Later tweaks to the same feature **update that file**. Do not add `plans/` or `reports/` under the repo root.
+
+When writing or revising a harness plan, include a **Flow graph** section (mermaid). Do not leave the plan as prose + a node table only.
+
+- Show how the **client** (app composition root, feature module, CLI, or user) talks to the package or system under change.
+- Cover boot/wiring and the primary runtime call. Add skip, drop, or error edges that change behavior.
+- For UI work, add a screen/route graph: where the user starts, what they tap, where they land.
+- Prefer `sequenceDiagram` for call order and `flowchart` for branching. Keep node labels short.
+
+```mermaid
+sequenceDiagram
+  participant Feature
+  participant Package
+  Feature->>Package: track(name, properties)
+  Package-->>Feature: return immediately
+```
